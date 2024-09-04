@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Bella</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #ff5733;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .menu {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .platillo {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            padding: 15px;
+        }
+        .platillo h3 {
+            margin: 0;
+        }
+        .platillo p {
+            margin: 5px 0 10px;
+        }
+        .btn-comprar {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn-comprar:hover {
+            background-color: #218838;
+        }
+        @media (min-width: 600px) {
+            .menu {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .platillo {
+                flex: 1 1 45%;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Casa Bella</h1>
+</header>
+
+<section class="menu">
+    <div class="platillo">
+        <h3>Platillo 1</h3>
+        <p>Descripción del Platillo 1.</p>
+        <button class="btn-comprar" onclick="comprar('https://www.ubereats.com')">Comprar ahora</button>
+    </div>
+    <div class="platillo">
+        <h3>Platillo 2</h3>
+        <p>Descripción del Platillo 2.</p>
+        <button class="btn-comprar" onclick="comprar('https://www.ubereats.com')">Comprar ahora</button>
+    </div>
+    <div class="platillo">
+        <h3>Platillo 3</h3>
+        <p>Descripción del Platillo 3.</p>
+        <button class="btn-comprar" onclick="comprar('https://www.ubereats.com')">Comprar ahora</button>
+    </div>
+    <div class="platillo">
+        <h3>Platillo 4</h3>
+        <p>Descripción del Platillo 4.</p>
+        <button class="btn-comprar" onclick="comprar('https://www.ubereats.com')">Comprar ahora</button>
+    </div>
+    <div class="platillo">
+        <h3>Platillo 5</h3>
+        <p>Descripción del Platillo 5.</p>
+        <button class="btn-comprar" onclick="comprar('https://www.ubereats.com')">Comprar ahora</button>
+    </div>
+</section>
+
+<script>
+    function comprar(url) {
+        window.open(url, '_blank');
+    }
+</script>
+
+</body>
+</html>
