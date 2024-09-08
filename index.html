@@ -143,6 +143,7 @@
             margin: auto;
             overflow: hidden;
             margin-top: 8px;
+            background-color: red;
         }
 
         .carousel {
@@ -157,15 +158,19 @@
         }
 
         button.prev, button.next {
+            display: flex;
+            justify-content: center;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
+            background-color: rgba(0, 0, 0, 0.35); /* Fondo negro con 50% de transparencia */
+            
             border: none;
-            padding: 10px;
+            border-radius: 30px;
+            width: 48px;
+            height: 48px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 32px;
             z-index: 1000;
         }
 
@@ -233,6 +238,28 @@
         .btn-comprar:hover {
             background-color: #218838;
         }
+
+        #orderNowBtn {
+            width: 90vw;
+            position: fixed;
+            bottom: 20px;  /* A 20px del borde inferior de la pantalla */
+            right: 20px;   /* A 20px del borde derecho de la pantalla */
+            background-color: #28a745; /* Color de fondo del botón */
+            color: white;  /* Color del texto */
+            border: none;  /* Sin borde */
+            padding: 15px 30px;  /* Espaciado interno del botón */
+            font-size: 18px;  /* Tamaño de la fuente */
+            border-radius: 50px;  /* Bordes redondeados */
+            cursor: pointer;  /* Cambia el cursor cuando pasa sobre el botón */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para darle efecto de flotante */
+            z-index: 1000; /* Para que esté por encima de otros elementos */
+            transition: background-color 0.3s ease; /* Efecto de transición al pasar el mouse */
+        }
+
+        #orderNowBtn:hover {
+            background-color: #218838; /* Cambio de color cuando se pasa el mouse */
+        }
+
 
         @media (min-width: 600px) {
             .menu {
@@ -391,6 +418,8 @@
                 ahora</button>
         </div>
     </section>
+
+    <button id="orderNowBtn">Order Now</button>
     </main>
     
 
@@ -425,78 +454,53 @@
 
         // carousel functionality
         const carousel = document.querySelector('.carousel');
+        const images = carousel.querySelectorAll('img');
+        const dotsContainer = document.getElementById('dotsContainer');
+        
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
-        const images = document.querySelectorAll('.carousel img');
-        const dotsContainer = document.getElementById('dotsContainer');
-        const dots = document.querySelectorAll('.dot');
         const totalImages = images.length;
         let currentIndex = 0;
 
-        dots[0].classList.add('active'); // Activar el primer punto
+        images.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
 
-        nextBtn.addEventListener('click', () => {
-            currentIndex++;
-            if (currentIndex >= totalImages) {
-                currentIndex = 0;
-            }
-            updateCarousel();
-        });
+    const dots = dotsContainer.querySelectorAll('.dot');
 
-        prevBtn.addEventListener('click', () => {
-            currentIndex--;
-            if (currentIndex < 0) {
-                currentIndex = totalImages - 1;
-            }
-            updateCarousel();
-        });
+    function updateCarousel() {
+        // Mover el carrusel
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        // Actualizar los puntos activos
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+    }
 
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+    }
 
-        function updateCarousel() {
-            const offset = -currentIndex * 100;
-            carousel.style.transform = `translateX(${offset}%)`;
-            updateDots();
-        }
+    function showNextSlide() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel();
+    }
 
-        function autoSlide() {
-            currentIndex++;
-            if (currentIndex >= totalImages) {
-                currentIndex = 0;
-            }
-            updateCarousel();
-        }
+    function showPrevSlide() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateCarousel();
+    }
 
-        let autoSlideInterval = setInterval(autoSlide, 5000);
+    // Listeners para los botones
+    nextBtn.addEventListener('click', showNextSlide);
+    prevBtn.addEventListener('click', showPrevSlide);
 
-        carousel.addEventListener('mouseenter', () => {
-            clearInterval(autoSlideInterval);
-        });
-
-        carousel.addEventListener('mouseleave', () => {
-            autoSlideInterval = setInterval(autoSlide, 5000);
-        });
-
-        for (let i = 0; i < totalImages; i++) {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
-            dotsContainer.appendChild(dot);
-        }
-
-        function updateDots() {
-            dots.forEach((dot, index) => {
-                dot.classList.remove('active');
-                if (index === currentIndex) {
-                    dot.classList.add('active');
-                }
-            });
-        }
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentIndex = index;
-                updateCarousel();
-            });
-        });
+    // Opcional: Automatización del carrusel
+    setInterval(showNextSlide, 5000); // Cambia la imagen cada 5 segundos
 
     </script>
 
