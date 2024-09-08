@@ -136,6 +136,68 @@
             display: block;
         }
 
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            width: 100%;
+            max-width: 600px;
+            height: 40vh;
+        }
+
+        button.prev, button.next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 1000;
+        }
+
+        button.prev {
+            left: 10px;
+        }
+
+        button.next {
+            right: 10px;
+        }
+
+        /* Carousel dots */
+
+        .dots-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: white;
+        }
+
         .platillo {
             background: white;
             border-radius: 8px;
@@ -226,6 +288,26 @@
             <li><a href="tel:4178859097">Locations3</a></li>
         </ul>
     </nav>
+
+    <div class="carousel-container">
+        <button class="prev" id="prevBtn">&#10094;</button>
+        <div class="carousel">
+            <img src="      
+                https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/bella_special.jpeg?raw=true
+            " alt="Image 1">
+            <img src="
+            https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/cheese_chicken.jpeg?raw=true
+            " alt="Image 2">
+            <img src="
+            https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/el_grande_burritos.jpeg?raw=true
+            " alt="Image 3">
+            <img src="
+            https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/ceviche.jpeg?raw=true
+            " alt="Image 4">
+        </div>
+        <button class="next" id="nextBtn">&#10095;</button>
+        <div class="dots-container" id="dotsContainer"></div>
+    </div>
 
     <section class="menu">
         <div class="platillo">
@@ -340,6 +422,82 @@
             phones_menu.classList.toggle('contact-open');
             button_call_us.classList.toggle('call-us-animation');
         }
+
+        // carousel functionality
+        const carousel = document.querySelector('.carousel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const images = document.querySelectorAll('.carousel img');
+        const dotsContainer = document.getElementById('dotsContainer');
+        const dots = document.querySelectorAll('.dot');
+        const totalImages = images.length;
+        let currentIndex = 0;
+
+        dots[0].classList.add('active'); // Activar el primer punto
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex++;
+            if (currentIndex >= totalImages) {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = totalImages - 1;
+            }
+            updateCarousel();
+        });
+
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            carousel.style.transform = `translateX(${offset}%)`;
+            updateDots();
+        }
+
+        function autoSlide() {
+            currentIndex++;
+            if (currentIndex >= totalImages) {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        }
+
+        let autoSlideInterval = setInterval(autoSlide, 5000);
+
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+            autoSlideInterval = setInterval(autoSlide, 5000);
+        });
+
+        for (let i = 0; i < totalImages; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            dotsContainer.appendChild(dot);
+        }
+
+        function updateDots() {
+            dots.forEach((dot, index) => {
+                dot.classList.remove('active');
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                }
+            });
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel();
+            });
+        });
+
     </script>
 
 </body>
