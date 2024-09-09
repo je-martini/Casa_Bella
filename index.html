@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="description"
         content="Explora el delicioso menú de Casa Bella. Prueba nuestros burritos, ceviche, y más">
     <title>Casa Bella</title>
@@ -245,23 +246,141 @@
         #orderNowBtn {
             width: 90vw;
             position: fixed;
-            bottom: 20px;  /* A 20px del borde inferior de la pantalla */
-            right: 20px;   /* A 20px del borde derecho de la pantalla */
-            background-color: #28a745; /* Color de fondo del botón */
-            color: white;  /* Color del texto */
-            border: none;  /* Sin borde */
-            padding: 15px 30px;  /* Espaciado interno del botón */
-            font-size: 18px;  /* Tamaño de la fuente */
-            border-radius: 50px;  /* Bordes redondeados */
-            cursor: pointer;  /* Cambia el cursor cuando pasa sobre el botón */
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para darle efecto de flotante */
-            z-index: 1000; /* Para que esté por encima de otros elementos */
-            transition: background-color 0.3s ease; /* Efecto de transición al pasar el mouse */
+            bottom: 20px;  
+            right: 20px;   
+            background-color: #28a745; 
+            color: white;  
+            border: none;  
+            padding: 15px 30px;  
+            font-size: 18px;  
+            border-radius: 50px;  
+            cursor: pointer;  
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
+            z-index: 1000; 
+            transition: background-color 0.3s ease; 
         }
 
         #orderNowBtn:hover {
-            background-color: #218838; /* Cambio de color cuando se pasa el mouse */
+            background-color: #218838; 
         }
+
+        footer {
+        background-color: #333;
+        color: white;
+        padding: 20px 20px 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        }
+
+        .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        }
+
+        .social-media h3, .map-container h3 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .social-media a {
+            color: white;
+            font-size: 64px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .icon{
+            width: 64px;
+            height: 64px;          
+        }
+
+        .uber-icon{
+            width: 64px;
+        }
+
+        .social-media a:hover {
+        color: #FFD700;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .map-container iframe {
+        border-radius: 8px;
+        width: 90vw;
+        margin-left: 8px;
+        }
+
+        .scrollable-map {
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        gap: 32px;
+        scroll-behavior: smooth;
+        margin-top: 20px;
+        }
+
+        .scrollable-map div {
+        display: inline-block;
+        width: 90vw; /* Puedes ajustar el tamaño según sea necesario */
+        height: 300px;
+        border-radius: 8px;
+        }
+        .scrollable-map div h4{
+            font-size: 24px;
+        }
+
+        .scroll-btn {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 75%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.35);
+            
+            border: none;
+            border-radius: 30px;
+            width: 48px;
+            height: 48px;
+           
+            cursor: pointer;
+            z-index: 1;
+            font-size: 32px;
+        }
+
+        .scroll-btn.left {
+            left: 10px;
+        }
+
+        .scroll-btn.right {
+            right: 10px;
+        }
+
+        .scroll-btn:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .map-container iframe {
+            /* width: 100%; */
+            height: 200px;
+        }
+        }
+
 
 
         @media (min-width: 600px) {
@@ -343,8 +462,9 @@
         <div class="platillo">
             <h3>Bella Special</h3>
             <img src="
-        https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/bella_special.jpeg?raw=true
-        " alt="Bella Special">
+                https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/bella_special.jpeg?raw=true
+                " alt="Bella Special"
+            >
             <p><strong>Precio: $12.99</strong></p>
 
             <p>Grilled steak, chicken, shrimp, onion, and bell pepper. Served over a bed of rice and covered with cheese
@@ -424,6 +544,73 @@
 
     <button id="orderNowBtn">Order Now</button>
     </main>
+    <footer>
+        <div class="footer-container">
+          <!-- Redes sociales -->
+          <div class="social-media">
+            <h3>Follow us</h3>
+            <a href="https://www.facebook.com/p/Casa-Bella-Mexican-Cuisine-on-battlefield-100089211687805/" 
+                target="_blank"><i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="
+                https://www.doordash.com/en/store/casa-bella-mexican-cuisine-springfield-24287070/?srsltid=AfmBOopuAGuEX2ZSFho2DNGjOIC3tX8LSlyXDe0y69SyXKxfDLo1f9lb
+                " target="_blank"
+            >
+                <img class="icon" src="
+                https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/doordashicon.png?raw=true    
+                " alt=""
+                >
+            </a>
+            <a href="
+                https://www.grubhub.com/restaurant/casa-bella---battlefield-300-e-battlefield-rd-springfield/6129456
+                " target="_blank"
+            >
+                <img class="icon" src="
+                https://raw.githubusercontent.com/je-martini/photos_casa_bella/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/grubhub-logo-3.png
+                " alt=""
+                >
+            </a>
+            <a href="
+                https://www.ubereats.com/store/casa-bella-mexican-cuisine/QhZ6ld7sVw2LvtyPKo1VNQ?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjMwMCUyMEUlMjBCYXR0bGVmaWVsZCUyMFJkJTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyaGVyZSUzQWFmJTNBc3RyZWV0c2VjdGlvbiUzQVJacjQtdkQ1bWE3U1BFZGVWQjVvOUElM0FDZ2NJQkNENWxZY05FQUVhQXpNd01BJTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMmhlcmVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EzNy4xNTk0OSUyQyUyMmxvbmdpdHVkZSUyMiUzQS05My4yOTIxNSU3RA%3D%3D&ps=1
+                " target="_blank"
+            >
+                <img class="uber-icon" src="
+                https://raw.githubusercontent.com/je-martini/photos_casa_bella/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/ubereatsicon2.png                "
+                >
+            </a>
+        </div>
+          
+          <!-- Mapa de ubicación -->
+          <div class="map-container">
+            
+            <h3>Our Locations</h3>
+
+            <button class="scroll-btn left" onclick="scrollToLeft()">&#10094;</button>
+            
+            <div class="scrollable-map">
+                <div>
+                
+                    <h4>S. Campbell</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25442.57849283976!2d-93.31450498865733!3d37.14503491761891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87cf6562babc9363%3A0xe3fcdfd681eed58f!2sCasa%20Bella%20Mexican%20Cuisine%20Battlefield%20Rd!5e0!3m2!1sen!2sus!4v1725831451250!5m2!1sen!2sus" 
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+
+                </div>
+                <div>
+                    <h4>Battlefield</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25442.57849283976!2d-93.31450498865733!3d37.14503491761891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87cf6562babc9363%3A0xe3fcdfd681eed58f!2sCasa%20Bella%20Mexican%20Cuisine%20Battlefield%20Rd!5e0!3m2!1sen!2sus!4v1725831451250!5m2!1sen!2sus" 
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <button class="scroll-btn right" onclick="scrollRight()">&#10095;</button>
+
+          </div>
+        </div>
+      </footer>
+      
     
 
     <script>
@@ -505,6 +692,26 @@
     // Opcional: Automatización del carrusel
     setInterval(showNextSlide, 5000); // Cambia la imagen cada 5 segundos
 
+
+    // scroll-maps
+    
+    function scrollToLeft() {
+        
+        const scrollContainer = document.querySelector('.scrollable-map');
+        scrollContainer.scrollBy({
+        left: -600, // Ajusta la cantidad de desplazamiento según sea necesario
+        behavior: 'smooth'
+    });
+}
+
+function scrollRight() {
+    
+    const scrollContainer = document.querySelector('.scrollable-map');
+    scrollContainer.scrollBy({
+        left: 600, // Ajusta la cantidad de desplazamiento según sea necesario
+        behavior: 'smooth'
+    });
+}
     </script>
 
 </body>
