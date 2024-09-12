@@ -14,7 +14,10 @@
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
+            padding-top: 28%;
         }
+
+        /* Header */
 
         header {
             background-color: #ff5733;
@@ -24,12 +27,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: fixed; /* Keep the header fixed */
+            bottom: 88%; /* Stick the header to the top of the page */
+            width: 90%; /* Ensure the header spans the full width of the screen */
+            z-index: 1000; /* Ensure it's on top of other elements */
+            padding: 12px 24px; 
         }
 
         .phone_button {
             margin-left: 32px;
             transform: scale(-1, 1);
         }
+
         .call-us-animation.phone_button{
             transition: transform 0.3s ease-in-out;
             transform: rotate(45deg);
@@ -139,7 +148,15 @@
         .contact-open{
             display: block;
         }
+        
+        
+        /* Main */
 
+        main {
+            margin-top: 7%;
+        }
+
+        /* Carousel */
         .carousel-container {
             position: relative;
             width: 100%;
@@ -428,7 +445,7 @@
     <nav class="dropdown-menu" id="dropdown-menu">
         <ul id="menu-principal">
             <li><a href="#inicio">Menu</a></li>
-            <li><a href="#productos">Locations</a></li>
+            <li><a href="#productos" onclick="scrollToLocations()" >Locations</a></li>
             <li><a href="#contacto">Reviews</a></li>
             <li><a href="#contacto">Catering</a></li>
             <li><a href="#contacto">Order Online</a></li>
@@ -439,7 +456,7 @@
         <ul id="menu-principal">
             <li><a href="tel:4178859097">300 E Battlefield Rd</a></li>
             <li><a href="tel:4177715031">4610 S Campbell Ave</a></li>
-            <li><a href="tel:4178859097">Locations3</a></li>
+            <li><a href="tel:4178859097">Locations</a></li>
         </ul>
     </nav>
 
@@ -594,7 +611,7 @@
             <button class="scroll-btn left" onclick="scrollToLeft()">&#10094;</button>
             
             <div class="scrollable-map">
-                <div>
+                <div id="productos">
                 
                     <h4>S. Campbell</h4>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25442.57849283976!2d-93.31450498865733!3d37.14503491761891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87cf6562babc9363%3A0xe3fcdfd681eed58f!2sCasa%20Bella%20Mexican%20Cuisine%20Battlefield%20Rd!5e0!3m2!1sen!2sus!4v1725831451250!5m2!1sen!2sus" 
@@ -717,6 +734,11 @@ function scrollRight() {
         behavior: 'smooth'
     });
 }
+
+    function scrollToLocations() {
+            var locationsSection = document.getElementById('productos');
+            locationsSection.scrollIntoView({ behavior: 'smooth' });
+    }
     </script>
 
 </body>
