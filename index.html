@@ -433,7 +433,9 @@
             </div>
             <!-- Logo -->
             <a href="#top">
-                <img class="casa-bella" src="https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-6/326355320_569592018069305_2581656395496060307_n.jpg?stp=cp6_dst-jpg&_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=muHNVMFv1oUQ7kNvgG5h8SY&_nc_ht=scontent-atl3-1.xx&oh=00_AYAt77IKT1YAgEm2OMjUQoUXmPk2saOYV4kl1xMDgpUOYw&oe=66E43FA5" alt="">
+                <img class="casa-bella" src="
+                https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/casa_bella_logo.png?raw=true
+                " alt="">
             </a>
             <!-- Menú de hamburguesa -->
             <div class="burger-menu" id="burger-menu">
@@ -642,17 +644,26 @@
                 <button class="prev" id="prevBtn">&#10094;</button>
                 <div class="carousel">
                     <img src="      
-                        https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/bella_special.jpeg?raw=true
+                    https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/review1.png?raw=true
                     " alt="Image 1">
                     <img src="
-                    https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/cheese_chicken.jpeg?raw=true
-                    " alt="Image 2">
+                    https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/review2.png?raw=true
+                    "alt="Image 2">
                     <img src="
-                    https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/el_grande_burritos.jpeg?raw=true
-                    " alt="Image 3">
+                    https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/review3.png?raw=true
+                    "alt="Image 3">
                     <img src="
-                    https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/ceviche.jpeg?raw=true
-                    " alt="Image 4">
+                    https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/review4.png?raw=true
+                    "alt="Image 4">
+                    <img src="
+                    https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/review5.png?raw=true
+                    "alt="Image 4">
+                    <img src="
+                    https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/review6.png?raw=true
+                    "alt="Image 4">
+                    <img src="
+                    https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/review7.png?raw=true
+                    "alt="Image 4">
                 </div>
                 <button class="next" id="nextBtn">&#10095;</button>
                 <div class="dots-container reviews" id="dotsContainer"></div>
@@ -692,7 +703,7 @@
             button_call_us.classList.toggle('call-us-animation');
         }
 
-        // carousel functionality
+        // main section carousel functionality 
         const carousel = document.querySelector('.carousel');
         const images = carousel.querySelectorAll('img');
         const dotsContainer = document.getElementById('dotsContainer');
@@ -708,61 +719,109 @@
         if (index === 0) dot.classList.add('active');
         dot.addEventListener('click', () => goToSlide(index));
         dotsContainer.appendChild(dot);
-    });
+        });
 
-    const dots = dotsContainer.querySelectorAll('.dot');
+        const dots = dotsContainer.querySelectorAll('.dot');
 
-    function updateCarousel() {
+        function updateCarousel() {
         // Mover el carrusel
         carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
         // Actualizar los puntos activos
         dots.forEach(dot => dot.classList.remove('active'));
         dots[currentIndex].classList.add('active');
-    }
+        }
 
-    function goToSlide(index) {
-        currentIndex = index;
-        updateCarousel();
-    }
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
 
-    function showNextSlide() {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateCarousel();
-    }
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateCarousel();
+        }
 
-    function showPrevSlide() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateCarousel();
-    }
+        function showPrevSlide() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateCarousel();
+        }
 
-    // Listeners para los botones
-    nextBtn.addEventListener('click', showNextSlide);
-    prevBtn.addEventListener('click', showPrevSlide);
+        // Listeners para los botones
+        nextBtn.addEventListener('click', showNextSlide);
+        prevBtn.addEventListener('click', showPrevSlide);
 
-    // Opcional: Automatización del carrusel
-    setInterval(showNextSlide, 5000); // Cambia la imagen cada 5 segundos
+        // Opcional: Automatización del carrusel
+        setInterval(showNextSlide, 5000); // Cambia la imagen cada 5 segundos
 
 
-    // scroll-maps
-    
-    function scrollToLeft() {
+        // scroll-maps
         
-        const scrollContainer = document.querySelector('.scrollable-map');
-        scrollContainer.scrollBy({
-        left: -600, // Ajusta la cantidad de desplazamiento según sea necesario
-        behavior: 'smooth'
-    });
-}
+        function scrollToLeft() {
+            
+            const scrollContainer = document.querySelector('.scrollable-map');
+            scrollContainer.scrollBy({
+            left: -600, // Ajusta la cantidad de desplazamiento según sea necesario
+            behavior: 'smooth'
+        });
+        }
 
-function scrollRight() {
-    
-    const scrollContainer = document.querySelector('.scrollable-map');
-    scrollContainer.scrollBy({
-        left: 600, // Ajusta la cantidad de desplazamiento según sea necesario
-        behavior: 'smooth'
-    });
-}
+        function scrollRight() {
+            
+            const scrollContainer = document.querySelector('.scrollable-map');
+            scrollContainer.scrollBy({
+                left: 600, // Ajusta la cantidad de desplazamiento según sea necesario
+                behavior: 'smooth'
+            });
+        }
 
+        // carousel functionality for the footer
+        const footerCarousel = document.querySelector('footer .carousel');
+        const footerImages = footerCarousel.querySelectorAll('img');
+        const footerDotsContainer = document.querySelector('footer .dots-container');
+
+        const footerPrevBtn = document.querySelector('footer #prevBtn');
+        const footerNextBtn = document.querySelector('footer #nextBtn');
+
+        footerPrevBtn.addEventListener('click', footerShowPrevSlide);
+        footerNextBtn.addEventListener('click', footerShowNextSlide);
+
+        let footerCurrentIndex = 0;
+        // Copy and paste the main section carousel functionality here
+        // and update the selectors and variable names to match the footer carousel
+
+        function footerShowNextSlide() {
+            footerCurrentIndex = (footerCurrentIndex + 1) % footerImages.length;
+            footerUpdateCarousel();
+        }
+
+        function footerShowPrevSlide() {
+            footerCurrentIndex = (footerCurrentIndex - 1 + footerImages.length) % footerImages.length;
+            footerUpdateCarousel();
+        }
+
+        function footerUpdateCarousel() {
+            // Mover el carrusel
+            footerCarousel.style.transform = `translateX(-${footerCurrentIndex * 100}%)`;
+            // Actualizar los puntos activos
+            footerDots.forEach(dot => dot.classList.remove('active'));
+            footerDots[footerCurrentIndex].classList.add('active');
+        }
+
+        // Create dots for the footer carousel
+        footerImages.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => footerGoToSlide(index));
+            footerDotsContainer.appendChild(dot);
+        });
+
+        const footerDots = footerDotsContainer.querySelectorAll('.dot');
+
+        function footerGoToSlide(index) {
+            footerCurrentIndex = index;
+            footerUpdateCarousel();
+        }
     </script>
 
 </body>
