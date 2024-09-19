@@ -10,33 +10,40 @@
     <title>Casa Bella</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f4f4f4;
+            background-image: url('https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/casa_bella_flores.png?raw=true');
+            background-size: cover;
+            color: #333; 
             padding-top: 28%;
         }
 
         /* Header */
 
         .header {
-            background-color: #ff5733;
+            /* background-color: #2E3B32; */
+            background-image: url('https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/marmol-header.png?raw=true');
             color: white;
             text-align: center;
             margin-top: 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed; /* Keep the header fixed */
-            bottom: 88%; /* Stick the header to the top of the page */
-            width: 90%; /* Ensure the header spans the full width of the screen */
-            z-index: 1000; /* Ensure it's on top of other elements */
+            position: fixed; 
+            bottom: 88%; 
+            width: 90%; 
+            z-index: 1000; 
             padding: 12px 24px; 
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+            /* border-radius: 12px; */
         }
 
         .phone_button {
             margin-left: 32px;
             transform: scale(-1, 1);
+            
         }
 
         .call-us-animation.phone_button{
@@ -83,7 +90,7 @@
         .line-menu {
             width: 32px;
             height: 6px;
-            background-color: #111;
+            background-color: #F4D35E;
             border-radius: 2px;
             margin-bottom: 3px;
             transition: all 0.3s ease-in-out;
@@ -164,7 +171,16 @@
             margin: auto;
             overflow: hidden;
             margin-top: 8px;
-            background-color: red;
+            background-color: white;
+            /* border-radius: 100%; Rounded corners */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        main .carousel-container{
+            border-radius: 100%; 
+        }
+        footer .carousel-container{
+            border-radius: 5%; 
         }
 
         .carousel {
@@ -175,7 +191,7 @@
         .carousel img {
             width: 100%;
             max-width: 600px;
-            height: 40vh;
+            height: 30vh;
         }
 
         button.prev, button.next {
@@ -184,10 +200,11 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.35); /* Fondo negro con 50% de transparencia */
-            
+             /* background-color: ; Fondo negro con 50% de transparencia */
+            color: #0074B7;
             border: none;
-            border-radius: 30px;
+            border-radius: 50%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             width: 48px;
             height: 48px;
             cursor: pointer;
@@ -214,7 +231,7 @@
             height: 15px;
             width: 15px;
             margin: 0 5px;
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: #F4D35E;
             border-radius: 50%;
             display: inline-block;
             cursor: pointer;
@@ -247,13 +264,15 @@
         }
 
         .btn-comprar {
-            background-color: #28a745;
+            background-color:  #FF6F3C;
             color: white;
             border: none;
-            border-radius: 5px;
-            padding: 10px;
+            border-radius: 50px;
+            padding: 12px 20px;
             cursor: pointer;
             text-align: center;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .btn-comprar:hover {
@@ -265,24 +284,24 @@
             position: fixed;
             bottom: 20px;  
             right: 20px;   
-            background-color: #28a745; 
+            background-color: #0074B7;
             color: white;  
             border: none;  
             padding: 15px 30px;  
             font-size: 18px;  
             border-radius: 50px;  
             cursor: pointer;  
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9); 
             z-index: 1000; 
             transition: background-color 0.3s ease; 
         }
 
         #orderNowBtn:hover {
-            background-color: #218838; 
+            background-color: #FF6F3C; 
         }
 
         footer {
-        background-color: #333;
+        background-color: #2E3B32;
         color: white;
         padding: 20px 20px 100px;
         display: flex;
@@ -320,6 +339,7 @@
         .casa-bella{
             width: 128px;
             height: 128px;
+            border-radius: 100%;
         }
 
         .uber-icon{
@@ -336,10 +356,15 @@
             max-width: 1000px;
         }
 
+        .map-container .first-map{
+            width: 88vw;
+        }
+
         .map-container iframe {
-        border-radius: 8px;
+        border-radius: 12px;
         width: 90vw;
         margin-left: 8px;
+        border: 2px solid #F4D35E;
         }
 
         .scrollable-map {
@@ -425,7 +450,7 @@
         <nav class="header">
             <!-- Botón de llamada -->
             <div class="phone_button" id="button-call-us">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke="none" width="40"
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#F4D35E" viewBox="0 0 24 24" stroke="none" width="40"
                         height="40">
                         <path strokeLinecap="round" strokeLinejoin="round"
                             d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
@@ -622,7 +647,7 @@
                 
                     <h4>S. Campbell</h4>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25442.57849283976!2d-93.31450498865733!3d37.14503491761891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87cf6562babc9363%3A0xe3fcdfd681eed58f!2sCasa%20Bella%20Mexican%20Cuisine%20Battlefield%20Rd!5e0!3m2!1sen!2sus!4v1725831451250!5m2!1sen!2sus" 
-                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    class="first-map"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
 
                 </div>
