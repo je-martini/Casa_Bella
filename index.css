@@ -1,0 +1,440 @@
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url('https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/casa_bella_flores.png?raw=true');
+            background-size: cover;
+            color: #333; 
+            padding-top: 28%;
+        }
+
+        /* Header */
+
+        .header {
+            /* background-color: #2E3B32; */
+            background-image: url('https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/marmol-header.png?raw=true');
+            color: white;
+            text-align: center;
+            margin-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed; 
+            bottom: 88%; 
+            width: 90%; 
+            z-index: 1000; 
+            padding: 12px 24px; 
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+            /* border-radius: 12px; */
+        }
+
+        .phone_button {
+            margin-left: 32px;
+            transform: scale(-1, 1);
+            
+        }
+
+        .call-us-animation.phone_button{
+            transition: transform 0.3s ease-in-out;
+            transform: rotate(45deg);
+        }
+
+        .burger-menu {
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            margin: 8px;
+            margin-right: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-open {
+            transform: rotate(-45deg);
+        }
+
+        .top-line.menu-open {
+            transform: rotate(45deg);
+            align-self: start;
+            transform-origin: left center;
+            width: 100%;
+
+        }
+
+        .middle-line.menu-open {
+            display: none;
+        }
+
+        .bottom-line.menu-open {
+            transform: rotate(-45deg);
+            align-self: end;
+            transform-origin: left center;
+            width: 100%;
+        }
+
+
+        .line-menu {
+            width: 32px;
+            height: 6px;
+            background-color: #F4D35E;
+            border-radius: 2px;
+            margin-bottom: 3px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .top-line {
+            width: 50%;
+        } 
+
+        .bottom-line {
+            width: 50%;
+            align-self: end;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        /* Dropdown menu */
+        .dropdown-menu {
+            display: none;
+            background-image: url('https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/marmol-header.png?raw=true');
+            width: 91%;
+            padding: 20px;
+            margin: 0  auto;
+            position: fixed;
+            top: 12%;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .dropdown-menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dropdown-menu ul li {
+            padding: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+
+        .dropdown-menu ul li:hover {
+            background-color: #f4f4f4;
+        }
+
+        .dropdown-open {
+            display: block;
+        }
+
+        .contact-open{
+            display: block;
+        }
+        
+        
+        /* Main */
+
+        main {
+            margin-top: 10%;
+        }
+
+        /* Carousel */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            margin-top: 8px;
+            background-color: transparent;
+            /* border-radius: 100%; Rounded corners */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        main .carousel-container{
+            border-radius: 100%; 
+        }
+        footer .carousel-container{
+            border-radius: 5%; 
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            width: 100%;
+            max-width: 600px;
+            height: 30vh;
+        }
+
+        button.prev, button.next {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%); 
+            background-color: rgba(0, 0, 0, 0.35);
+            color: #0074B7;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            font-size: 32px;
+            z-index: 999;
+        }
+
+        button.prev {
+            left: 10px;
+        }
+
+        button.next {
+            right: 10px;
+        }
+
+        /* Carousel dots */
+
+        .dots-container {
+            text-align: center;
+            margin-top: 10px;
+            position: absolute;
+            bottom: 4%;
+            left: 38%;
+        }
+        .dots-container.reviews{
+            bottom: 5%;
+            left: 28%;
+        }
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #F4D35E;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: white;
+        }
+
+        .platillo {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            padding: 15px;
+        }
+
+        .platillo h3 {
+            margin-bottom: 12px;
+
+        }
+
+        .platillo p {
+            margin: 5px 0 10px;
+        }
+
+        .platillo img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .btn-comprar {
+            background-color:  #FF6F3C;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-comprar:hover {
+            background-color: #218838;
+        }
+
+        #orderNowBtn {
+            width: 90vw;
+            position: fixed;
+            bottom: 20px;  
+            right: 20px;   
+            background-color: #0074B7;
+            color: white;  
+            border: none;  
+            padding: 15px 30px;  
+            font-size: 18px;  
+            border-radius: 50px;  
+            cursor: pointer;  
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9); 
+            z-index: 1000; 
+            transition: background-color 0.3s ease; 
+        }
+
+        #orderNowBtn:hover {
+            background-color: #FF6F3C; 
+        }
+
+        footer {
+        background-color: #2E3B32;
+        color: white;
+        padding: 20px 20px 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        }
+
+        .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        }
+
+        .social-media h3, .map-container h3 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .social-media a {
+            color: white;
+            font-size: 64px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .icon{
+            width: 64px;
+            height: 64px;          
+        }
+
+        .casa-bella{
+            width: 128px;
+            height: 128px;
+            border-top-left-radius: 55%;
+        }
+
+        .uber-icon{
+            width: 64px;
+        }
+
+        .social-media a:hover {
+        color: #FFD700;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .map-container .first-map{
+            width: 88vw;
+        }
+
+        .map-container iframe {
+        border-radius: 12px;
+        width: 90vw;
+        margin-left: 8px;
+        border: 2px solid #F4D35E;
+        }
+
+        .scrollable-map {
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        gap: 32px;
+        scroll-behavior: smooth;
+        margin-top: 20px;
+        }
+
+        .scrollable-map div {
+        display: inline-block;
+        width: 90vw; /* Puedes ajustar el tamaño según sea necesario */
+        height: 300px;
+        border-radius: 8px;
+        }
+        .scrollable-map div h4{
+            font-size: 24px;
+        }
+
+        .scroll-btn {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 75%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.35);
+            
+            border: none;
+            border-radius: 30px;
+            width: 48px;
+            height: 48px;
+           
+            cursor: pointer;
+            z-index: 1;
+            font-size: 32px;
+        }
+
+        .scroll-btn.left {
+            left: 10px;
+        }
+
+        .scroll-btn.right {
+            right: 10px;
+        }
+
+        .scroll-btn:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .map-container iframe {
+            /* width: 100%; */
+            height: 200px;
+        }
+        }
+
+
+
+        @media (min-width: 600px) {
+            .menu {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .platillo {
+                flex: 1 1 45%;
+                margin: 10px;
+            }
+        }

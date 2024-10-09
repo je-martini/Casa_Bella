@@ -58,196 +58,9 @@
     <meta name="description"
         content="Explora el delicioso menú de Casa Bella. Prueba nuestros burritos, ceviche, y más">
     <title>Casa Bella</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            padding-top: 28%;
-        }
-
-        /* Header */
-
-        .header {
-            background-color: #ff5733;
-            color: white;
-            text-align: center;
-            margin-top: 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed; /* Keep the header fixed */
-            bottom: 88%; /* Stick the header to the top of the page */
-            width: 90%; /* Ensure the header spans the full width of the screen */
-            z-index: 1000; /* Ensure it's on top of other elements */
-            padding: 12px 24px; 
-        }
-
-        .phone_button {
-            margin-left: 32px;
-            transform: scale(-1, 1);
-        }
-
-        .call-us-animation.phone_button{
-            transition: transform 0.3s ease-in-out;
-            transform: rotate(45deg);
-        }
-
-        .casa-bella{
-            width: 128px;
-            height: 128px;
-        }
-
-        .burger-menu {
-            width: 32px;
-            height: 32px;
-            cursor: pointer;
-            margin: 8px;
-            margin-right: 32px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .menu-open {
-            transform: rotate(-45deg);
-        }
-
-        .top-line.menu-open {
-            transform: rotate(45deg);
-            align-self: start;
-            transform-origin: left center;
-            width: 100%;
-
-        }
-
-        .middle-line.menu-open {
-            display: none;
-        }
-
-        .bottom-line.menu-open {
-            transform: rotate(-45deg);
-            align-self: end;
-            transform-origin: left center;
-            width: 100%;
-        }
-
-
-        .line-menu {
-            width: 32px;
-            height: 6px;
-            background-color: #111;
-            border-radius: 2px;
-            margin-bottom: 3px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .top-line {
-            width: 50%;
-        } 
-
-        .bottom-line {
-            width: 50%;
-            align-self: end;
-        }
-
-        .menu {
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        /* Dropdown menu */
-        .dropdown-menu {
-            display: none;
-            background-color: white;
-            width: 90%;
-            padding: 20px;
-            margin: 0  auto;
-            position: fixed;
-            top: 12%;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .dropdown-menu ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .dropdown-menu ul li {
-            padding: 12px;
-            margin-bottom: 16px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .dropdown-menu ul li a {
-            color: #333;
-            text-decoration: none;
-        }
-
-        .dropdown-menu ul li:hover {
-            background-color: #f4f4f4;
-        }
-
-        .dropdown-open {
-            display: block;
-        }
-
-        .contact-open{
-            display: block;
-        }
-        
-        
-        /* Main */
-
-        main {
-            margin-top: 7%;
-        }
-
-
-        .btn-comprar {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .btn-comprar:hover {
-            background-color: #218838;
-        }
-
-        #orderNowBtn {
-            width: 90vw;
-            position: fixed;
-            bottom: 20px;  
-            right: 20px;   
-            background-color: #28a745; 
-            color: white;  
-            border: none;  
-            padding: 15px 30px;  
-            font-size: 18px;  
-            border-radius: 50px;  
-            cursor: pointer;  
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
-            z-index: 1000; 
-            transition: background-color 0.3s ease; 
-        }
-
-        #orderNowBtn:hover {
-            background-color: #218838; 
-        }
-
-    </style>
+    <link rel="stylesheet" href="./menu.css">
+    <script src="./index.js" defer></script> 
+    
 </head>
 
 <body>
@@ -256,7 +69,7 @@
         <nav class="header">
             <!-- Botón de llamada -->
             <div class="phone_button" id="button-call-us">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke="none" width="40"
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#F4D35E" viewBox="0 0 24 24" stroke="none" width="40"
                         height="40">
                         <path strokeLinecap="round" strokeLinejoin="round"
                             d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
@@ -265,7 +78,7 @@
             <!-- Logo -->
             <a href="./index.html">
                 <img class="casa-bella" src="
-                https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/casa_bella_logo.png?raw=true
+                https://github.com/je-martini/photos_casa_bella/blob/main/casa_bella_mexican_cuisine_photos_menu_in_springfield_uber_eats/casa_bella_logo_no_bg.png?raw=true
                 " alt="">
             </a>
             <!-- Menú de hamburguesa -->
